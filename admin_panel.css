@@ -1,65 +1,60 @@
-html {
-    position: absolute;
-    width: 1057px;
-    height: 2037px;
-
-    background: #A3DBF3;
+body{
+    margin: 0;
+    padding: 20px;
+    font-family: "Verdana";
+    background-color: #A3DBF3;
 }
 
-h1 {
-    position: absolute;
-    width: 315px;
-    height: 635px;
-
-    background: rgba(3, 43, 253, 0.22);
-    border-radius: 40px;
-}
-
-lobby{
-    position: absolute;
-    width: 315px;
-    height: 450px;
-
-    background: rgba(3, 43, 253, 0.22);
-    border-radius: 40px;
-}
-
-title_lobby {
-
-
-    position: absolute;
-    width: 300px;
-    height: 450px;
-    padding-top: 10px;
-    text-align: center;
-    font-family: Play;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 32px;
-    line-height: 37px;
-    /* identical to box height */
-    letter-spacing: 0.1em;
-
-    color: #000000;
-}
-
-hr{	padding-top: 54px;
-    display: block;
-    content: "";
-    height: 30px;
-    margin-top: -31px;
-    border-style: solid;
-    border-color: black;
-    border-width: 0 0 1px 0;
+.list
+{
+    background-color: rgba(3, 27, 137, 0.22);
     border-radius: 20px;
+    padding: 0 0 20px 0;
+    text-align: center;
+    width: 315px;
+    box-shadow: 5px 5px 10px 0px #3498db;
+    display: inline-block;
+    margin-right: 50px;
+    margin-bottom: 50px;
+
 }
-lobby_rectangle {
+.item-list
+{
+    overflow-y: scroll;
+    height: 250px;
 
-    position: absolute;
-    margin-right: 10px;
-    margin-left: 10px;
-    width: 259px;
-    height: 85px;
+}
+.item-list::-webkit-scrollbar
+{
+    width: 8px;
+    height: 6px;
+    background-color: #2a579e;
+}
+.item-list::-webkit-scrollbar-thumb
+{
+    width: 8px;
+    height: 6px;
+    background-color: #3498db;
+}
+.lobby_list_title
+{
+    margin: 0 0 20px 0;
+    padding: 20px;
+    border-bottom: 1px solid black;
+    padding: 5px 10px;
+}
 
-    background: #D2FFDA;
-    border-radius: 15px;}
+.lobby_item
+{
+    margin: 0 auto;
+    width: 260px;
+    background-color: #D2FFDA;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.lobby_item:last-child
+{
+    margin-bottom: 0;
+}
