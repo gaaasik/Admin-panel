@@ -3,6 +3,14 @@ body{
     padding: 20px;
     font-family: "Verdana";
     background-color: #A3DBF3;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "lobby games players"
+                         "packs questions questions"
+                         "categories questions questions";
+    grid-column-gap: 50px;
 }
 
 .list
@@ -11,9 +19,7 @@ body{
     border-radius: 20px;
     padding: 0 0 20px 0;
     text-align: center;
-    width: calc(33% - 70px);
     box-shadow: 5px 5px 10px 0px #3498db;
-    display: inline-block;
     margin-right: 50px;
     margin-bottom: 50px;
 
@@ -22,7 +28,6 @@ body{
 {
     overflow-y: scroll;
     height: 250px;
-
 }
 .item-list::-webkit-scrollbar
 {
@@ -36,15 +41,44 @@ body{
     height: 6px;
     background-color: #3498db;
 }
-.lobby_list_title
+.list_title
 {
     margin: 0 0 20px 0;
     padding: 20px;
     border-bottom: 1px solid black;
     padding: 5px 10px;
 }
+.lobby_list
+{
+    grid-area: lobby;
+}
+.games_list
+{
+    grid-area: games;
+}
+.players_list
+{
+    grid-area: players;
+}
 
-.lobby_item
+.packs_list
+{
+    grid-area: packs;
+}
+.questions_list
+{
+    grid-area: questions;
+}
+.questions_list .item-list
+{
+    height: auto;
+}
+.categories-list
+{
+    grid-area: categories;
+}
+
+.list .item
 {
     margin: 0 auto;
     width: 260px;
