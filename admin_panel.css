@@ -92,3 +92,7 @@ body{
 {
     margin-bottom: 0;
 }
+#questions_list
+{
+    visibility: hidden;
+}
