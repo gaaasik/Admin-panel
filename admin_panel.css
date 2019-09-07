@@ -1,0 +1,65 @@
+html {
+    position: absolute;
+    width: 1057px;
+    height: 2037px;
+
+    background: #A3DBF3;
+}
+
+h1 {
+    position: absolute;
+    width: 315px;
+    height: 635px;
+
+    background: rgba(3, 43, 253, 0.22);
+    border-radius: 40px;
+}
+
+lobby{
+    position: absolute;
+    width: 315px;
+    height: 450px;
+
+    background: rgba(3, 43, 253, 0.22);
+    border-radius: 40px;
+}
+
+title_lobby {
+
+
+    position: absolute;
+    width: 300px;
+    height: 450px;
+    padding-top: 10px;
+    text-align: center;
+    font-family: Play;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 37px;
+    /* identical to box height */
+    letter-spacing: 0.1em;
+
+    color: #000000;
+}
+
+hr{	padding-top: 54px;
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+lobby_rectangle {
+
+    position: absolute;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 259px;
+    height: 85px;
+
+    background: #D2FFDA;
+    border-radius: 15px;}
