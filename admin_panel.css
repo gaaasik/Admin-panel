@@ -3,6 +3,7 @@ body{
     padding: 20px;
     font-family: "Verdana";
     background-color: #A3DBF3;
+    display: grid;
 }
 
 .list
@@ -11,7 +12,7 @@ body{
     border-radius: 20px;
     padding: 0 0 20px 0;
     text-align: center;
-    width: 315px;
+    width: calc(33% - 70px);
     box-shadow: 5px 5px 10px 0px #3498db;
     display: inline-block;
     margin-right: 50px;
