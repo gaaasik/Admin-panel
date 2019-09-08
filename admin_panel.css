@@ -19,7 +19,7 @@ body{
     border-radius: 20px;
     padding: 0 0 20px 0;
     text-align: center;
-    box-shadow: 5px 5px 10px 0px #3498db;
+    box-shadow: 5px 5px 10px 0px #3498DB;
     margin-right: 50px;
     margin-bottom: 50px;
 
@@ -34,13 +34,13 @@ body{
 {
     width: 8px;
     height: 6px;
-    background-color: #2a579e;
+    background-color: #3498DB;
 }
 .item-list::-webkit-scrollbar-thumb
 {
     width: 8px;
     height: 6px;
-    background-color: #3498db;
+    background-color: #2A579E;
 }
 .list_title
 {
