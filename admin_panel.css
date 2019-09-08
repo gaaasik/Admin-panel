@@ -28,6 +28,7 @@ body{
 {
     overflow-y: scroll;
     height: 250px;
+    padding: 0 20px;
 }
 .item-list::-webkit-scrollbar
 {
@@ -47,6 +48,25 @@ body{
     padding: 20px;
     border-bottom: 1px solid black;
     padding: 5px 10px;
+    position: relative;
+}
+.list_title::after
+{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    vertical-align: middle;
+    background-image: url("img/sort-ico.png");
+    background-size: 20px 20px;
+    top: 17px;
+}
+
+.list_title::after:hover
+{
+    cursor: pointer;
 }
 .lobby_list
 {
@@ -80,12 +100,10 @@ body{
 
 .list .item
 {
-    margin: 0 auto;
-    width: 260px;
+    margin: 0 auto 20px auto;
     background-color: #D2FFDA;
     padding: 10px;
     border-radius: 10px;
-    margin-bottom: 20px;
 }
 
 .lobby_item:last-child
