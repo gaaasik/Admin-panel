@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BIM Viewer</title>
+    <script type="module">
+        import { IfcViewerAPI } from 'https://cdn.jsdelivr.net/npm/web-ifc-viewer@4.7.8/dist/web-ifc-viewer.esm.js';
+
+        window.addEventListener('DOMContentLoaded', async () => {
+            const container = document.getElementById('viewer');
+            const viewer = new IfcViewerAPI({ container, backgroundColor: new Uint8ClampedArray([255, 255, 255, 255]) });
+            viewer.axes.setAxes();
+            viewer.grid.setGrid();
+
+            const fileUrl = '/uploads/{{ filename }}';
+            try {
+                await viewer.IFC.loadIfcUrl(fileUrl);
+                viewer.context.renderer.postProduction.active = true;
+                viewer.context.renderer.postProduction.customEffects.outlineEnabled = true;
+            } catch (e) {
+                console.error('Failed to load IFC:', e);
+                const msg = document.createElement('div');
+                msg.textContent = 'Не удалось загрузить IFC. Проверьте файл.';
+                msg.style.color = 'red';
+                document.body.prepend(msg);
+            }
+
+            const saveBtn = document.getElementById('savePng');
+            if (saveBtn) {
+                saveBtn.addEventListener('click', () => {
+                    const canvas = container.querySelector('canvas');
+                    if (!canvas) return;
+                    const dataUrl = canvas.toDataURL('image/png');
+                    const a = document.createElement('a');
+                    a.href = dataUrl;
+                    a.download = '{{ filename }}.png';
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                });
+            }
+        });
+    </script>
+    <style>
+        html, body { margin: 0; padding: 0; height: 100%; }
+        #viewer { width: 100%; height: calc(100vh - 48px); }
+        header { padding: 8px 12px; font-family: sans-serif; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #eee; }
+        a { text-decoration: none; }
+        button { padding: 6px 10px; }
+        .spacer { flex: 1; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/">← Назад</a>
+        <span>Просмотр: {{ filename }}</span>
+        <span class="spacer"></span>
+        <button id="savePng">Скачать PNG</button>
+    </header>
+    <div id="viewer"></div>
+</body>
+</html>
